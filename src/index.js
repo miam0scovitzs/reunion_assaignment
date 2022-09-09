@@ -13,7 +13,7 @@ mongoose.connect("mongodb+srv://pattamu:iKHwECgQCaYNVpge@sandeepcluster.9rzkh.mo
 .then( () => console.log("MongoDb is connected"))
 .catch ( err => console.log(err) )
 
-app.use("/", route)
+app.use("/api/", route)
 
 app.listen(process.env.PORT || 3000, (err)=> {
     console.log("Connected to PORT 3000")
