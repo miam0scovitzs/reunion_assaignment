@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-//const userSchema=require("../model/userSchema")
+//const userSchema= require("./model/userSchema")
 
 
 
@@ -7,9 +7,9 @@ const jwt = require('jsonwebtoken');
      let token = req.headers['my-api-key']
    
      if(!token) return res.status(400).send({msg:"No token is present in Header file"})
-     console.log(token)
+     
       
-     let userId =req.body.userId
+     let userId =req.params.userId
     
      let decodedToken = jwt.verify(token,"reUnion")
      if(!decodedToken) 

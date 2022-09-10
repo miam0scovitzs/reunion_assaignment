@@ -7,7 +7,7 @@ const isValidValue = (value) => {
 };
 
 const isValidName = function(value){
-    return /^[A-Za-z\s]+$/.test(value)
+    return /^[A-z]*$|^[A-z]+\s[A-z]*$/.test(value)
 };
 
 const isValidEmail = (email)=>{
@@ -18,10 +18,10 @@ const isValidPhone = (phone)=>{
     return (/^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/.test(phone))
 }
 
-const isValidPincode = function (value) {
-    if (!isNaN(value) && value.toString().length == 6) return true
+const isValidPassword = (password)=>{
+    return (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password))
 }
 
 const isValidObjectId = (objectId) => mongoose.Types.ObjectId.isValid(objectId)
 
-module.exports = { isValidValue,isValidName,isValidEmail,isValidPhone, isValidPincode,isValidObjectId }
+module.exports = { isValidValue,isValidName,isValidEmail,isValidPhone,isValidObjectId,isValidPassword }
