@@ -5,7 +5,7 @@ const createRoute= require("../controller/user")
 const postController= require("../controller/postController")
 //const commentcontroller = require("../controller/commentController")
 const authorisation = require("../auth")
-
+//....................use the(/api) before any route endPoint cause i decleare it globally..........................................
 router.post("/create",createRoute.createUser)
 router.post("/logIn",createRoute.userLogIn)
 router.put("/update/:userId",authorisation.userAuthorization,createRoute.updateUser)
